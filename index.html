@@ -7,6 +7,24 @@
   <!-- Bootstrap CSS via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .social-media-content {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+    .social-media-item {
+      margin-bottom: 20px;
+    }
+    .social-media-item h3 {
+      margin-bottom: 15px;
+    }
+    .social-media-item img {
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -59,16 +77,18 @@
       </div>
     </section>
 
-   <section id="social" class="mt-5">
+    <section id="social" class="mt-5">
       <h2>Social Media</h2>
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col-md-4 social-media-content">
           <div class="social-media-item">
             <h3>YouTube</h3>
             <a href="https://www.youtube.com/@nolgaemitv" target="_blank"><img src="assets/images/youtube-icon.jpg" alt="YouTube" style="height: 30px;"></a>
             <iframe width="100%" height="215" src="https://www.youtube.com/embed/jaU_smjWgg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="social-media-item mt-4">
+        </div>
+        <div class="col-md-4 social-media-content">
+          <div class="social-media-item">
             <h3>Google Blog Spot</h3>
             <a href="https://nolgaemi.blogspot.com/" target="_blank"><img src="assets/images/googleBlogSpot.jpg" alt="BlogSpot" style="height: 30px;"></a>
             <div class="content-snippet mt-2">
@@ -76,7 +96,9 @@
               <a href="https://nolgaemi.blogspot.com/" target="_blank" class="btn btn-primary">Read More</a>
             </div>
           </div>
-          <div class="social-media-item mt-4">
+        </div>
+        <div class="col-md-4 social-media-content">
+          <div class="social-media-item">
             <h3>Naver Blog</h3>
             <a href="https://blog.naver.com/checrealname" target="_blank"><img src="assets/images/naverblog.jpg" alt="NaverBlog" style="height: 30px;"></a>
             <div class="content-snippet mt-2">
@@ -87,7 +109,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="text-center mt-5 py-3 bg-dark text-light">
