@@ -46,3 +46,7 @@ footer a:hover {
 .form-control, .btn {
   border-radius: 5px;
 }
+
+html {
+  scroll-padding-top: 70px; /* Adjust according to the height of your fixed header */
+}
