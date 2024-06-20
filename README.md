@@ -1,1 +1,0 @@
-# nolGaeMi.github.io
