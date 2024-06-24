@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
   font-family: Arial, sans-serif;
 }
@@ -49,4 +50,54 @@ footer a:hover {
 
 html {
   scroll-padding-top: 70px; /* Adjust according to the height of your fixed header */
+}
+
+/* Moved from index.html */
+.social-media-content {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+.social-media-item {
+  margin-bottom: 20px;
+}
+.social-media-item h3 {
+  margin-bottom: 15px;
+}
+.social-media-item img {
+  margin-right: 10px;
+}
+.playstore-content {
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #e9f7ef;
+  text-align: center;
+}
+.playstore-item img {
+  margin-right: 10px;
+  height: 50px;
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* New styles for layout */
+.about-playstore-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-content, .playstore-content {
+  flex: 1;
+  margin: 10px;
+  max-width: 48%;
+}
+
+@media (max-width: 768px) {
+  .about-content, .playstore-content {
+    max-width: 100%;
+  }
 }
