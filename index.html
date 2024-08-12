@@ -157,11 +157,21 @@
       const languageSwitcher = document.getElementById('languageSwitcher');
       const elements = document.querySelectorAll('[data-en]');
 
-      languageSwitcher.addEventListener('change', (event) => {
-        const language = event.target.value;
+      // Function to update content based on selected language
+      function updateContent(language) {
         elements.forEach(element => {
           element.innerHTML = element.getAttribute(`data-${language}`);
         });
+      }
+
+      // Set initial content based on the selected language
+      const initialLanguage = languageSwitcher.value;
+      updateContent(initialLanguage);
+
+      // Update content when language is changed
+      languageSwitcher.addEventListener('change', (event) => {
+        const language = event.target.value;
+        updateContent(language);
       });
 
       // Fetch and insert featured projects
