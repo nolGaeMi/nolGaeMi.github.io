@@ -115,7 +115,7 @@
           (d.head || d.body).appendChild(s);
         })();
       </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <noscript>댓글을 보려면 자바스크립트를 활성화해 주세요 <a href="https://disqus.com/?ref_noscript">Disqus에 의해 제공된 댓글</a></noscript>
     </section>
   </main>
 
@@ -126,5 +126,68 @@
   <!-- Bootstrap JS via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/scripts.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const headerHeight = document.querySelector('header').offsetHeight;
+
+      document.querySelectorAll('a.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          window.scrollTo({
+            top: targetElement.offsetTop - headerHeight,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Fetch and insert featured projects
+      fetch('all_projects.html')
+        .then(response => response.text())
+        .then(data => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, 'text/html');
+          const project1 = doc.querySelector('#project7');
+          const project2 = doc.querySelector('#project9');
+
+          const featuredProjects = document.getElementById('featured-projects');
+
+          if (project1) {
+            const project1Card = createProjectCard(project1);
+            featuredProjects.appendChild(project1Card);
+          }
+
+          if (project2) {
+            const project2Card = createProjectCard(project2);
+            featuredProjects.appendChild(project2Card);
+          }
+        })
+        .catch(error => console.error('Error fetching projects:', error));
+
+      function createProjectCard(projectRow) {
+        const title = projectRow.querySelector('td:nth-child(2)').textContent;
+        const source = projectRow.querySelector('td:nth-child(3)').innerHTML;
+        const description = projectRow.querySelector('td:nth-child(4)').textContent;
+        const link = projectRow.querySelector('td:nth-child(5)').innerHTML;
+
+        const card = document.createElement('div');
+        card.className = 'col-md-6';
+        card.innerHTML = `
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${description}</p>
+              ${link}
+              <p class="card-text">${source}</p>
+            </div>
+          </div>
+        `;
+        return card;
+      }
+    });
+  </script>
 </body>
 </html>
