@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nolGaeMi's Tech Journey</title>
+  <title>놀개미의 기술 하우스</title>
   <!-- Bootstrap CSS via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,24 +12,18 @@
   <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpg" alt="nolGaeMi Logo" style="height: 40px;"> nolGaeMi
+        <img src="assets/images/logo.jpg" alt="놀개미 로고" style="height: 40px;"> 놀개미
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home" data-en="Home" data-ko="홈">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about" data-en="About" data-ko="소개">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#social" data-en="Social" data-ko="소셜">Social</a></li>
-          <li class="nav-item"><a class="nav-link" href="#comments" data-en="Bulletin Board" data-ko="게시판">Bulletin Board</a></li>
-          <li class="nav-item">
-            <select id="languageSwitcher" class="form-select">
-              <option value="en">English</option>
-              <option value="ko">한국어</option>
-            </select>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#home">홈</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">프로젝트</a></li>
+          <li class="nav-item"><a class="nav-link" href="#social">소셜</a></li>
+          <li class="nav-item"><a class="nav-link" href="#comments">게시판</a></li>
         </ul>
       </div>
     </div>
@@ -37,187 +31,100 @@
 
   <main class="container mt-5 pt-5">
     <section id="home" class="text-center mt-5 pt-5">
-      <h1 data-en="Welcome to nolGaeMi's Tech House" data-ko="놀개미의 기술 하우스에 오신 것을 환영합니다">Welcome to nolGaeMi's Tech House</h1>
-      <p data-en="Hi! I'm nolGaeMi, an IT enthusiast and YouTuber. Join me as I explore programming, web apps, game building, and more." data-ko="안녕하세요! 저는 IT 열성 팬이자 유튜버인 놀개미입니다. 프로그래밍, 웹 앱, 게임 제작 등을 탐구하는 저와 함께하세요.">Hi! I'm nolGaeMi, an IT enthusiast and YouTuber. Join me as I explore programming, web apps, game building, and more.</p>
-      <img src="assets/images/welcome.jpg" alt="Welcome Image" class="img-fluid rounded" style="width: 30%;">
+      <h1>놀개미의 기술 하우스에 오신 것을 환영합니다</h1>
+      <p>안녕하세요! 저는 IT 열성 팬이자 유튜버인 놀개미입니다. 프로그래밍, 웹 앱, 게임 제작 등을 탐구하는 저와 함께하세요.</p>
+      <img src="assets/images/welcome.jpg" alt="환영 이미지" class="img-fluid rounded" style="width: 30%;">
     </section>
 
     <section id="about" class="mt-5">
-      <h2 data-en="IT Certification & Experience" data-ko="자격 및 경력">IT Certification & Experience</h2>
+      <h2>자격 및 경력</h2>
       <div class="row about-playstore-container">
         <div class="col-md-6 about-content text-start">
-          <img src="assets/images/your_photo.jpg" alt="Your Photo" class="img-fluid rounded-circle" style="width: 30%;">
-          <p data-en="Current Server Administrator<br>Certified Information Processing Engineer / Linux Master Level 2<br>Received the Encouragement Award at the 2023 Open Univ. SW Competition<br>Games on Google Play Store<br>Programs using C#, Java, Python, and R (see projects below)"
-             data-ko="현 서버 담당자<br>정보처리기사 / 리눅스 마스터 2급<br>2023년 방송대 총장배 S/W 경진대회 장려상 수상<br>구글 플레이스토어 게임 출시 및 운영중<br>c#, 자바, 파이썬, R 활용 프로그램 개발(아래 프로젝트 참조)">
+          <img src="assets/images/your_photo.jpg" alt="사진" class="img-fluid rounded-circle" style="width: 30%;">
+          <p>
+            현 서버 담당자<br>정보처리기사 / 리눅스 마스터 2급<br>2023년 방송대 총장배 S/W 경진대회 장려상 수상<br>구글 플레이스토어 게임 출시 및 운영중<br>c#, 자바, 파이썬, R 활용 프로그램 개발(아래 프로젝트 참조)
           </p>
         </div>
         <div class="col-md-6 playstore-content text-start">
-          <h3 data-en="nolGaeMi's Play Store" data-ko="놀개미 플레이 스토어">nolGaeMi's Play Store</h3>
-          <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank"><img src="assets/images/playstore.jpg" alt="Play Store" class="playstore-item img-fluid"></a>
+          <h3>놀개미 플레이 스토어</h3>
+          <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank"><img src="assets/images/playstore.jpg" alt="플레이 스토어" class="playstore-item img-fluid"></a>
           <div class="content-snippet mt-2">
-            <p data-en="Check out nolGaeMi's apps and games on the Play Store!" data-ko="플레이 스토어에서 놀개미 앱과 게임을 확인하세요!">Check out nolGaeMi's apps and games on the Play Store!</p>
-            <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank" class="btn btn-success" data-en="Explore" data-ko="탐색">Explore</a>
+            <p>플레이 스토어에서 놀개미 앱과 게임을 확인하세요!</p>
+            <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank" class="btn btn-success">탐색</a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="projects" class="mt-5">
-      <h2 data-en="Projects" data-ko="프로젝트">Projects</h2>
+      <h2>프로젝트</h2>
       <div id="featured-projects" class="row">
         <!-- Featured projects will be inserted here -->
       </div>
-      <!-- Link to All Projects -->
       <div class="mt-3 text-center">
-        <a href="all_projects.html" class="btn btn-secondary" data-en="View All Projects" data-ko="모든 프로젝트 보기">View All Projects</a>
+        <a href="all_projects.html" class="btn btn-secondary">모든 프로젝트 보기</a>
       </div>
     </section>
 
     <section id="social" class="mt-5">
-      <h2 data-en="Social Media" data-ko="소셜 미디어">Social Media</h2>
+      <h2>소셜 미디어</h2>
       <div class="row">
         <div class="col-md-4 social-media-content text-start">
           <div class="social-media-item">
-            <h3 data-en="YouTube" data-ko="유튜브">YouTube</h3>
+            <h3>유튜브</h3>
             <a href="https://www.youtube.com/@nolgaemitv" target="_blank"><b>Hit Me!</b> <img src="assets/images/youtube-icon.jpg" alt="YouTube" style="height: 30px;"></a>
             <iframe width="100%" height="215" src="https://www.youtube.com/embed/jaU_smjWgg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-md-4 social-media-content text-start">
           <div class="social-media-item">
-            <h3 data-en="Google Blog Spot" data-ko="구글 블로그 스팟">Google Blog Spot</h3>
+            <h3>구글 블로그 스팟</h3>
             <a href="https://nolgaemi.blogspot.com/" target="_blank"><img src="assets/images/googleBlogSpot.jpg" alt="BlogSpot" style="height: 30px;"></a>
             <div class="content-snippet mt-2">
-              <p data-en="Visit my Google BlogSpot to read fun and useful content!" data-ko="재미있고 유익한 콘텐츠를 읽기 위해 구글 블로그 스팟을 방문하세요!">Visit my Google BlogSpot to read fun and useful content!</p>
-              <a href="https://nolgaemi.blogspot.com/" target="_blank" class="btn btn-primary" data-en="Read More" data-ko="더 읽기">Read More</a>
+              <p>재미있고 유익한 콘텐츠를 읽기 위해 구글 블로그 스팟을 방문하세요!</p>
+              <a href="https://nolgaemi.blogspot.com/" target="_blank" class="btn btn-primary">더 읽기</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 social-media-content text-start">
           <div class="social-media-item">
-            <h3 data-en="Naver Blog" data-ko="네이버 블로그">Naver Blog</h3>
+            <h3>네이버 블로그</h3>
             <a href="https://blog.naver.com/checrealname" target="_blank"><img src="assets/images/naverblog.jpg" alt="NaverBlog" style="height: 30px;"></a>
             <div class="content-snippet mt-2">
-              <p data-en="Explore my Naver Blog for highly useful files and data downloads!" data-ko="매우 유용한 파일과 데이터 다운로드를 위해 네이버 블로그를 탐험해보세요!">Explore my Naver Blog for highly useful files and data downloads!</p>
-              <a href="https://blog.naver.com/checrealname" target="_blank" class="btn btn-primary" data-en="Read More" data-ko="더 읽기">Read More</a>
+              <p>매우 유용한 파일과 데이터 다운로드를 위해 네이버 블로그를 탐험해보세요!</p>
+              <a href="https://blog.naver.com/checrealname" target="_blank" class="btn btn-primary">더 읽기</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Disqus Comment Section -->
     <section id="comments" class="mt-5">
-      <h2 data-en="Comments" data-ko="댓글">Comments</h2>
+      <h2>댓글</h2>
       <div id="disqus_thread"></div>
       <script>
         var disqus_config = function () {
-          this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.pathname;
         };
 
-        (function() {  // DON'T EDIT BELOW THIS LINE
+        (function() {
           var d = document, s = d.createElement('script');
-          s.src = 'https://cycloTechDream.disqus.com/embed.js';  // Replace YOUR_DISQUS_SHORTNAME with your Disqus shortname
+          s.src = 'https://cycloTechDream.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date());
           (d.head || d.body).appendChild(s);
         })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </section>
-
   </main>
 
   <footer class="text-center mt-5 py-3 bg-dark text-light">
-    <p data-en="&copy; 2024 nolGaeMi. All rights reserved." data-ko="&copy; 2024 nolGaeMi. 판권 소유.">&copy; 2024 nolGaeMi. All rights reserved.</p>
+    <p>&copy; 2024 놀개미. 판권 소유.</p>
   </footer>
 
   <!-- Bootstrap JS via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/scripts.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      
-      document.querySelectorAll('a.nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-          
-          window.scrollTo({
-            top: targetElement.offsetTop - headerHeight,
-            behavior: 'smooth'
-          });
-        });
-      });
-
-      // Language switcher functionality
-      const languageSwitcher = document.getElementById('languageSwitcher');
-      const elements = document.querySelectorAll('[data-en]');
-
-      // Function to update content based on selected language
-      function updateContent(language) {
-        elements.forEach(element => {
-          element.innerHTML = element.getAttribute(`data-${language}`);
-        });
-      }
-
-      // Set initial content based on the selected language
-      const initialLanguage = languageSwitcher.value;
-      updateContent(initialLanguage);
-
-      // Update content when language is changed
-      languageSwitcher.addEventListener('change', (event) => {
-        const language = event.target.value;
-        updateContent(language);
-      });
-
-      // Fetch and insert featured projects
-      fetch('all_projects.html')
-        .then(response => response.text())
-        .then(data => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(data, 'text/html');
-          const project1 = doc.querySelector('#project7');
-          const project2 = doc.querySelector('#project9');
-
-          const featuredProjects = document.getElementById('featured-projects');
-
-          if (project1) {
-            const project1Card = createProjectCard(project1);
-            featuredProjects.appendChild(project1Card);
-          }
-
-          if (project2) {
-            const project2Card = createProjectCard(project2);
-            featuredProjects.appendChild(project2Card);
-          }
-        })
-        .catch(error => console.error('Error fetching projects:', error));
-
-      function createProjectCard(projectRow) {
-        const title = projectRow.children[1].textContent;
-        const source = projectRow.children[2].innerHTML;
-        const description = projectRow.children[3].textContent;
-        const link = projectRow.children[4].innerHTML;
-
-        const card = document.createElement('div');
-        card.className = 'col-md-6';
-        card.innerHTML = `
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">${title}</h5>
-              <p class="card-text">${description}</p>
-              ${link}
-              <p class="card-text">${source}</p>
-            </div>
-          </div>
-        `;
-        return card;
-      }
-    });
-  </script>
 </body>
 </html>
