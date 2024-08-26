@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Projects - Nolgaemi's Tech Journey</title>
+  <title>모든 프로젝트 - 놀개미의 기술 여정</title>
   <!-- Bootstrap CSS via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,24 +12,18 @@
   <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpg" alt="Nolgaemi Logo" style="height: 40px;"> nolGaeMi
+        <img src="assets/images/logo.jpg" alt="놀개미 로고" style="height: 40px;"> 놀개미
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html#home" data-en="Home" data-ko="홈">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about" data-en="About" data-ko="소개">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#social" data-en="Social" data-ko="소셜">Social</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#comments" data-en="Bulletin Board" data-ko="게시판">Bulletin Board</a></li>
-          <li class="nav-item">
-            <select id="languageSwitcher" class="form-select">
-              <option value="en" selected>English</option>
-              <option value="ko">Korean</option>
-            </select>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#home">홈</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">프로젝트</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#social">소셜</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#comments">게시판</a></li>
         </ul>
       </div>
     </div>
@@ -37,112 +31,110 @@
 
   <main class="container mt-5 pt-5">
     <section id="all-projects" class="mt-5">
-      <h2 data-en="All Projects" data-ko="모든 프로젝트">All Projects</h2>
+      <h2>모든 프로젝트</h2>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th data-en="Number" data-ko="번호">Number</th>
-            <th data-en="Title" data-ko="프로젝트이름">Title</th>
-            <th data-en="Source" data-ko="소스 코드">Source</th>
-            <th data-en="About" data-ko="요약">About</th>
-            <th data-en="Play or Platform" data-ko="실행 및 플렛폼">Play or Platform</th>
-            <th data-en="Year" data-ko="년도">Year</th>
+            <th>번호</th>
+            <th>프로젝트이름</th>
+            <th>소스 코드</th>
+            <th>요약</th>
+            <th>실행 및 플렛폼</th>
+            <th>년도</th>
           </tr>
         </thead>
         <tbody>
           <tr id="project1">
             <td>1</td>
-            <td data-en="Excel File Modification and Creation Program" data-ko="엑셀파일 변형 및 생성 프로그램">엑셀파일 변형 및 생성 프로그램</td>
-            <td><a href="https://github.com/githumfirst/IDcardsExcelAutomationGui?search=1" target="_blank" data-en="Source Code" data-ko="소스코드">소스코드(source)</a></td>
-            <td data-en="Written in C# and customizable for office use. IGC ITCenter office use." data-ko="C#으로 작성하였으며 업무용도로 커스터마이징 가능 함. IGC ITCenter 업무용">C#으로 작성하였으며 업무용도로 커스터마이징 가능 함<br>igc itcenter 업무용</td>
-            <td><a href="https://www.youtube.com/watch?v=YBx_BvuQBzE&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=16" target="_blank" data-en="Source Code Explanation and Execution Video" data-ko="소스 코드 설명 및 실행 영상">소스 코드 설명 및 실행 영상</a></td>
+            <td>엑셀파일 변형 및 생성 프로그램</td>
+            <td><a href="https://github.com/githumfirst/IDcardsExcelAutomationGui?search=1" target="_blank">소스코드</a></td>
+            <td>C#으로 작성하였으며 업무용도로 커스터마이징 가능 함<br>igc itcenter 업무용</td>
+            <td><a href="https://www.youtube.com/watch?v=YBx_BvuQBzE&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=16" target="_blank">소스 코드 설명 및 실행 영상</a></td>
             <td>2022</td>
           </tr>
 
           <tr id="project2">
             <td>2</td>
-            <td data-en="Lotto Number Generator" data-ko="로또 번호 자동 생성기">로또 번호 자동 생성기</td>
-            <td><a href="https://github.com/githumfirst/lotteNumberGenerator" target="_blank" data-en="Source Code" data-ko="소스코드">소스코드(source)</a></td>
-            <td data-en="Written in C#" data-ko="C#으로 작성">C#으로 작성</td>
-            <td><a href="https://www.youtube.com/watch?v=TMyqaxrhGaw&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=7" target="_blank" data-en="Source Code Explanation and Execution Video" data-ko="소스 코드 설명 및 실행 영상">소스 코드 설명 및 실행 영상</a></td>
+            <td>로또 번호 자동 생성기</td>
+            <td><a href="https://github.com/githumfirst/lotteNumberGenerator" target="_blank">소스코드</a></td>
+            <td>C#으로 작성</td>
+            <td><a href="https://www.youtube.com/watch?v=TMyqaxrhGaw&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=7" target="_blank">소스 코드 설명 및 실행 영상</a></td>
             <td>2023</td>
           </tr>
 
           <tr id="project3">
             <td>3</td>
-            <td data-en="RFID Generator" data-ko="RFID 생성기">RFID 생성기</td>
+            <td>RFID 생성기</td>
             <td>-</td>
-            <td data-en="Written in Python for office use at IGC ITCenter" data-ko="파이썬으로 작성. IGC ITCenter 업무용">파이썬으로 작성<br>igc itcenter 업무용</td>
-            <td><a href="https://www.youtube.com/watch?v=BmD-bos2jnY&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=1" target="_blank" data-en="Source Code Explanation and Execution Video" data-ko="소스 코드 설명 및 실행 영상">소스 코드 설명 및 실행 영상</a></td>
+            <td>파이썬으로 작성<br>igc itcenter 업무용</td>
+            <td><a href="https://www.youtube.com/watch?v=BmD-bos2jnY&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=1" target="_blank">소스 코드 설명 및 실행 영상</a></td>
             <td>2023</td>
           </tr>
 
           <tr id="project4">
             <td>4</td>
-            <td data-en="AI Lotto Number Generator" data-ko="인공지능 로또번호 생성기">인공지능 로또번호 생성기</td>
+            <td>인공지능 로또번호 생성기</td>
             <td>-</td>
-            <td data-en="Created using Python and AI machine learning" data-ko="파이썬 및 인공지능 머신러닝 사용하여 제작">파이썬 및 인공지능 머신러닝 사용하여 제작</td>
-            <td><a href="https://www.youtube.com/watch?v=7S8phpIRXew&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=2&t=2s" target="_blank" data-en="Source Code Explanation and Execution Video" data-ko="소스 코드 설명 및 실행 영상">소스 코드 설명 및 실행 영상</a></td>
+            <td>파이썬 및 인공지능 머신러닝 사용하여 제작</td>
+            <td><a href="https://www.youtube.com/watch?v=7S8phpIRXew&list=PL5o1u6HCZ9Gcrl6ICSThkPymqrs04vMZZ&index=2&t=2s" target="_blank">소스 코드 설명 및 실행 영상</a></td>
             <td>2023</td>
           </tr>
 
           <tr id="project5">
             <td>5</td>
-            <td data-en="Mini Game: Floating" data-ko="미니 게임: floating">미니 게임: floating</td>
-            <td data-en="Source taken from the internet and modified for Android use - now works only on mobile" data-ko="소스는 인터넷에서 퍼서 android용으로 수정함 - 지금은 모바일에서만 됨">소스는 인터넷에서 퍼서 android용으로 수정함-지금은모바일에서만 됨<br> * 소스: https://www.w3schools.com/graphics/tryit.asp?filename=trygame_default_gravity</td>
-            <td data-en="Created with JavaScript" data-ko="js로 제작">js로 제작</td>
-            <td><a href="https://multiplayer-demo-ac50d.web.app/" target="_blank" data-en="Execution - Firebase" data-ko="실행 - Firebase">실행-firebase</a></td>
+            <td>미니 게임: floating</td>
+            <td>소스는 인터넷에서 퍼서 android용으로 수정함-지금은모바일에서만 됨<br> * 소스: https://www.w3schools.com/graphics/tryit.asp?filename=trygame_default_gravity</td>
+            <td>js로 제작</td>
+            <td><a href="https://multiplayer-demo-ac50d.web.app/" target="_blank">실행-firebase</a></td>
             <td>2023</td>
           </tr>
 
           <tr id="project6">
             <td>6</td>
-            <td data-en="Retro AI Soldier Play Game" data-ko="레트로 인공지능 병정놀이 게임">레트로 인공지능 병정놀이 게임</td>
-            <td><a href="https://github.com/githumfirst/githumfirst.github.io?search=1" target="_blank" data-en="Created with JavaScript" data-ko="js로 제작"> javascript source </a><br>
-                <a href="https://knou.ac.kr/cs1/4801/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3MxJTJGMjI4OSUyRjY2ODMyNCUyRmFydGNsVmlldy5kbyUzRnBhZ2UlM0QxJTI2c3JjaENvbHVtbiUzRCUyNnNyY2hXcmQlM0QlMjZiYnNDbFNlcSUzRCUyNmJic09wZW5XcmRTZXElM0QlMjZyZ3NCZ25kZVN0ciUzRCUyNnJnc0VuZGRlU3RyJTNEJTI2aXNWaWV3TWluZSUzRGZhbHNlJTI2cGFzc3dvcmQlM0QlMjY%3D&epTicket=LOG" target="_blank" data-en="2023 Korea National Open University President's Cup S/W Encouragement Award Winner" data-ko="2023년 방송대 총장배 s/w 장려상 수상">2023년 방송대 총장배 s/w 장려상 수상</a>
+            <td>레트로 인공지능 병정놀이 게임</td>
+            <td><a href="https://github.com/githumfirst/githumfirst.github.io?search=1" target="_blank">javascript source</a><br>
+                <a href="https://knou.ac.kr/cs1/4801/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3MxJTJGMjI4OSUyRjY2ODMyNCUyRmFydGNsVmlldy5kbyUzRnBhZ2UlM0QxJTI2c3JjaENvbHVtbiUzRCUyNnNyY2hXcmQlM0QlMjZiYnNDbFNlcSUzRCUyNmJic09wZW5XcmRTZXElM0QlMjZyZ3NCZ25kZVN0ciUzRCUyNnJnc0VuZGRlU3RyJTNEJTI2aXNWaWV3TWluZSUzRGZhbHNlJTI2cGFzc3dvcmQlM0QlMjY%3D&epTicket=LOG" target="_blank">2023년 방송대 총장배 s/w 장려상 수상</a>
             </td>
-            <td data-en="Source code - currently only works on PC / Created using OpenAI ChatGPT 3.5 / A childhood soldier-game made to be enjoyed on the web / Created to be played directly on the web without installation" data-ko="소스코드(source)-지금은pc에서만 됨 / openai chatgpt 3.5를 활용하여 만듦 / 어렸을적 한번쯤은 해봤던 병정놀이 게임을 웹에서 즐길 수 있게 제작함"> 어렸을적 한번쯤은 해봤던 병정놀이 게임을 웹에서 즐길 수 있게 제작함 </td>
-            <td><a href="https://githumfirst.github.io/" target="_blank" data-en="Execution (PLAY) - Git web Services" data-ko="실행(PLAY)-git web Services">실행(PLAY)-git web Services</a></td>
+            <td>어렸을적 한번쯤은 해봤던 병정놀이 게임을 웹에서 즐길 수 있게 제작함</td>
+            <td><a href="https://githumfirst.github.io/" target="_blank">실행(PLAY)-git web Services</a></td>
             <td>2023</td>
           </tr>
 
           <tr id="project7">
             <td>7</td>
-            <td data-en="Monster Flight" data-ko="몬스터 플라이트">Monster Flight(몬스터 플라이트)</td>
-            <td><a href="https://play.google.com/store/apps/details?id=com.nolgaemi.monster" target="_blank" data-en="View Moster Flight in PlayStore" data-ko="몬스터 플라이트 플레이스토어에서 보기">몬스터 플라이트 플레이스토어에서 보기(in PlayStore)<br></a></td>
-            <td data-en="Created with Unity" data-ko="unity로 제작">unity로 제작</td>
-            <td><a href="https://youtube.com/shorts/YMnRnsPjmGs?si=doML47o6TM4u4CA4" target="_blank" data-en="Execution Video" data-ko="실행 영상">실행 영상(View in YouTube)<a/></td>
+            <td>몬스터 플라이트</td>
+            <td><a href="https://play.google.com/store/apps/details?id=com.nolgaemi.monster" target="_blank">몬스터 플라이트 플레이스토어에서 보기(in PlayStore)<br></a></td>
+            <td>unity로 제작</td>
+            <td><a href="https://youtube.com/shorts/YMnRnsPjmGs?si=doML47o6TM4u4CA4" target="_blank">실행 영상(View in YouTube)<a/></td>
             <td>2023</td>
           </tr>
 
           <tr id="project8">	
             <td>8</td>
-            <td data-en="Chicken Fight" data-ko="닭 싸움">Chicken Fight(치킨 파이트)</td>
-            <td><a href="https://play.google.com/store/apps/details?id=com.nolGaeMi.zoningFlappyBird" target="_blank" data-en="View Chicken Fight in PlayStore" data-ko="플레이스토어에서 치킨 파이트 보기">플레이스토어에서 치킨 파이트 보기(in PlayStore)<br></a>
-                <a href="https://youtu.be/r5kYHzb_XsQ?si=3BmZvuGWprslE6Df" target="_blank" data-en="Making Film" data-ko="제작 영상">제작 영상</a>
+            <td>치킨 파이트</td>
+            <td><a href="https://play.google.com/store/apps/details?id=com.nolGaeMi.zoningFlappyBird" target="_blank">플레이스토어에서 치킨 파이트 보기(in PlayStore)<br></a>
+                <a href="https://youtu.be/r5kYHzb_XsQ?si=3BmZvuGWprslE6Df" target="_blank">제작 영상</a>
             </td>
-            <td data-en="Created with Unity" data-ko="unity로 제작">unity로 제작</td>
-            <td><a href="https://youtu.be/li-fhQ1f9mw?si=gzdiwJdZkoDoW_5t" target="_blank" data-en="Execution Video" data-ko="실행 영상">실행 영상(view in Youtube)<a/></td>
+            <td>unity로 제작</td>
+            <td><a href="https://youtu.be/li-fhQ1f9mw?si=gzdiwJdZkoDoW_5t" target="_blank">실행 영상(view in Youtube)<a/></td>
             <td>2024</td>
           </tr>
 
           <tr id="project9">
             <td>9</td>
-            <td data-en="Server Monitor App" data-ko="서버 모니터 앱">Server Monitor App<br>서버 모니터 앱</td>
-            <td><a href="https://github.com/githumfirst/serverMonitorApp_BackEnd_Server/tree/main" target="_blank" data-en="Backend Server Source" data-ko="백앤드 서버 코드">백앤드 서버 코드<br></a>
-                <a href="https://github.com/githumfirst/serverMonitorApp_BackEnd_Agent" target="_blank" data-en="Backend Agent Source" data-ko="백앤드 에이전트 코드">백앤드 에이전트 코드<br></a>
-		<a href="https://github.com/githumfirst/serverMonitorApp_androidApp" target="_blank" data-en="Android App Source" data-ko="안드로이드 앱 코드">안드로이드 앱 코드<br></a>
+            <td>서버 모니터 앱</td>
+            <td><a href="https://github.com/githumfirst/serverMonitorApp_BackEnd_Server/tree/main" target="_blank">백앤드 서버 코드<br></a>
+                <a href="https://github.com/githumfirst/serverMonitorApp_BackEnd_Agent" target="_blank">백앤드 에이전트 코드<br></a>
+                <a href="https://github.com/githumfirst/serverMonitorApp_androidApp" target="_blank">안드로이드 앱 코드<br></a>
             </td>
-            <td data-en="Android App for monitoring server resource's / Flask & Kotlin" data-ko="서버 리스소 모니터 앱(플라스크/코틀린)"> 
-서버 리스소 모니터 앱(플라스크/코틀린)<br>
-<a href="https://nolgaemi.blogspot.com/2024/08/install-manual.html" data-en="Server Monitor App - Agent Install Manual" data-ko="서버 모니터 엡 - 에이전트 설치 메뉴얼">서버 모니터 엡 - 에이전트 설치 메뉴얼<br></a>
-<a href="https://nolgaemi.blogspot.com/2024/08/install-manual_8.html" data-en="Server Monitor App -Server Install Manual" data-ko="서버 모니터 엡 - 서버 설치 메뉴얼">서버 모니터 엡 -서버 설치 메뉴얼 <br></a>
-<a href="https://nolgaemi.blogspot.com/2024/08/vm-install-manual.html" data-en="Server Monitor App -vm Install Manual" data-ko="서버 모니터 엡 - vm 설치 메뉴얼">서버 모니터 엡 -vm 설치 메뉴얼 <br></a>
-
-</td>
-            <td><a href="https://youtu.be/JiYo7ujaXcg" target="_blank" data-en="Execution Video" data-ko="실행 영상">실행 영상(view in Youtube)<br><a/>
-		<a href="https://youtu.be/6bRb8r5zwXU" target="_blank" data-en="Execution Video" data-ko="실행 영상">실행 및 설명 영상(view in Youtube)<a/>
-	    </td>
+            <td>서버 리스소 모니터 앱(플라스크/코틀린)<br>
+                <a href="https://nolgaemi.blogspot.com/2024/08/install-manual.html">서버 모니터 엡 - 에이전트 설치 메뉴얼<br></a>
+                <a href="https://nolgaemi.blogspot.com/2024/08/install-manual_8.html">서버 모니터 엡 - 서버 설치 메뉴얼 <br></a>
+                <a href="https://nolgaemi.blogspot.com/2024/08/vm-install-manual.html">서버 모니터 엡 - vm 설치 메뉴얼 <br></a>
+            </td>
+            <td><a href="https://youtu.be/JiYo7ujaXcg" target="_blank">실행 영상(view in Youtube)<br><a/>
+                <a href="https://youtu.be/6bRb8r5zwXU" target="_blank">실행 및 설명 영상(view in Youtube)<a/>
+            </td>
             <td>2024</td>
           </tr>
         </tbody>
@@ -151,39 +143,11 @@
   </main>
 
   <footer class="text-center mt-5 py-3 bg-dark text-light">
-    <p data-en="&copy; 2024 nolGaeMi. All rights reserved." data-ko="&copy; 2024 nolGaeMi. 판권 소유.">&copy; 2024 nolGaeMi. All rights reserved.</p>
+    <p>&copy; 2024 놀개미. 판권 소유.</p>
   </footer>
 
   <!-- Bootstrap JS via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/scripts.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const headerHeight = document.querySelector('header').offsetHeight;
-
-      // Scroll behavior for internal links
-      document.querySelectorAll('a.nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href.startsWith('index.html')) {
-            e.preventDefault();
-            const targetId = href.split('#')[1];
-            window.location.href = `index.html#${targetId}`;
-          }
-        });
-      });
-
-      // Language switcher functionality
-      const languageSwitcher = document.getElementById('languageSwitcher');
-      const elements = document.querySelectorAll('[data-en]');
-
-      languageSwitcher.addEventListener('change', (event) => {
-        const language = event.target.value;
-        elements.forEach(element => {
-          element.textContent = element.getAttribute(`data-${language}`);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
