@@ -3,16 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>놀개미의 기술 하우스</title>
+  <title>NolGaeMi</title>
+
   <!-- Bootstrap CSS via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Space Background -->
+  <div id="space-bg"><canvas id="stars"></canvas></div>
+  <div id="space-fog"></div>
+
+  <!-- UFO (SVG) -->
+<svg id="ship" viewBox="0 0 260 140" aria-hidden="true">
+  <defs>
+    <!-- metallic body -->
+    <linearGradient id="ufoMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(240,248,255,0.95)"/>
+      <stop offset="0.45" stop-color="rgba(170,200,255,0.92)"/>
+      <stop offset="1" stop-color="rgba(120,160,255,0.90)"/>
+    </linearGradient>
+
+    <!-- underside -->
+    <linearGradient id="ufoBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(80,110,220,0.55)"/>
+      <stop offset="1" stop-color="rgba(20,30,60,0.05)"/>
+    </linearGradient>
+
+    <!-- glass dome -->
+    <radialGradient id="ufoDome" cx="35%" cy="30%" r="80%">
+      <stop offset="0" stop-color="rgba(255,255,255,0.85)"/>
+      <stop offset="0.45" stop-color="rgba(0,212,255,0.40)"/>
+      <stop offset="1" stop-color="rgba(124,92,255,0.18)"/>
+    </radialGradient>
+
+    <!-- beam -->
+    <linearGradient id="ufoBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(57,255,136,0.0)"/>
+      <stop offset="0.25" stop-color="rgba(57,255,136,0.22)"/>
+      <stop offset="0.75" stop-color="rgba(0,212,255,0.18)"/>
+      <stop offset="1" stop-color="rgba(124,92,255,0.0)"/>
+    </linearGradient>
+
+    <!-- glow -->
+    <filter id="ufoGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.9 0" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- soft shadow -->
+    <filter id="ufoShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="rgba(0,0,0,0.45)"/>
+    </filter>
+  </defs>
+
+  <!-- tractor beam (subtle) -->
+  <path d="M118 90 L142 90 L190 138 L70 138 Z"
+        fill="url(#ufoBeam)" opacity="0.85"/>
+
+  <!-- underside glow ring -->
+  <ellipse cx="130" cy="92" rx="86" ry="14"
+           fill="rgba(0,212,255,0.10)" filter="url(#ufoGlow)"/>
+
+  <!-- main saucer -->
+  <g filter="url(#ufoShadow)">
+    <path d="M40 80
+             C60 55, 95 45, 130 45
+             C165 45, 200 55, 220 80
+             C196 100, 165 108, 130 108
+             C95 108, 64 100, 40 80 Z"
+          fill="url(#ufoMetal)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+
+    <!-- belly shading -->
+    <path d="M58 84
+             C78 96, 102 102, 130 102
+             C158 102, 182 96, 202 84
+             C186 104, 162 114, 130 114
+             C98 114, 74 104, 58 84 Z"
+          fill="url(#ufoBelly)" opacity="0.85"/>
+
+    <!-- rim highlight -->
+    <ellipse cx="130" cy="82" rx="92" ry="26"
+             fill="rgba(255,255,255,0.06)" stroke="rgba(0,212,255,0.18)" stroke-width="1"/>
+  </g>
+
+  <!-- dome -->
+  <path d="M90 62
+           C98 42, 112 32, 130 32
+           C148 32, 162 42, 170 62
+           C154 66, 142 68, 130 68
+           C118 68, 106 66, 90 62 Z"
+        fill="url(#ufoDome)" stroke="rgba(255,255,255,0.28)" stroke-width="1"
+        filter="url(#ufoGlow)"/>
+
+  <!-- dome highlight -->
+  <path d="M110 44 C116 38, 124 35, 132 35
+           C125 36, 118 40, 114 48 Z"
+        fill="rgba(255,255,255,0.55)" opacity="0.55"/>
+
+  <!-- lights -->
+  <g filter="url(#ufoGlow)">
+    <circle cx="78"  cy="88" r="4.2" fill="rgba(57,255,136,0.9)"/>
+    <circle cx="102" cy="96" r="3.8" fill="rgba(0,212,255,0.9)"/>
+    <circle cx="130" cy="100" r="4.8" fill="rgba(124,92,255,0.9)"/>
+    <circle cx="158" cy="96" r="3.8" fill="rgba(0,212,255,0.9)"/>
+    <circle cx="182" cy="88" r="4.2" fill="rgba(57,255,136,0.9)"/>
+  </g>
+</svg>
+
   <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.jpg" alt="놀개미 로고" style="height: 40px;"> 놀개미
+        <img src="assets/logo.jpg" alt="놀개미 로고" style="height: 40px;"> 놀개미
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -31,23 +141,55 @@
 
   <main class="container mt-5 pt-5">
     <section id="home" class="text-center mt-5 pt-5">
-      <h1>놀개미의 기술 하우스에 오신 것을 환영합니다</h1>
-      <p>안녕하세요! 저는 IT 열성 팬이자 유튜버인 놀개미입니다. 프로그래밍, 웹 앱, 게임 제작 등을 탐구하는 저와 함께하세요.</p>
-      <img src="assets/images/welcome.jpg" alt="환영 이미지" class="img-fluid rounded" style="width: 30%;">
-    </section>
+  <h1 class="mb-2">놀개미의 DataLake에 오신 것을 환영합니다~</h1>
+
+  <p class="text-white-50 mt-0 mb-0" style="font-size: 1.05rem;">
+    (Welcome to NolGaeMi’s DataLake)
+  </p>
+
+  <!-- 여기 간격(체크한 부분) -->
+  <div class="my-3"></div>
+
+  <p class="mb-1">2026년에 컴터랑 영어정복 알려줄꾸마~, 따라와랏차!</p>
+  <p class="text-white-50 mt-0 mb-3">
+    (In 2026, I’ll show you how to conquer both IT and Korean—come along for the ride! 🚀😄)
+  </p>
+
+  <img src="assets/welcome.jpg" alt="환영 이미지" class="img-fluid rounded" style="width: 30%;">
+</section>
 
     <section id="about" class="mt-5">
       <h2>자격 및 경력</h2>
       <div class="row about-playstore-container">
         <div class="col-md-6 about-content text-start">
-          <img src="assets/images/your_photo.jpg" alt="사진" class="img-fluid rounded-circle" style="width: 30%;">
-          <p>
-            현 서버 담당자<br>정보처리기사 / 리눅스 마스터 2급<br>2023년 방송대 총장배 S/W 경진대회 장려상 수상<br>구글 플레이스토어 게임 출시 및 운영중<br>c#, 자바, 파이썬, R 활용 프로그램 개발(아래 프로젝트 참조)
-          </p>
+          <img src="assets/nolgaemi.png" alt="사진" class="img-fluid rounded-circle" style="width: 30%;">
+          <ul class="list-unstyled mt-3 mb-0">
+  <li class="d-flex align-items-start mb-2">
+    <span class="badge rounded-pill bg-info text-dark me-2">하는 일</span>
+    <span>서버·보안·잡일(?) 인간 올인원 이라고, 좋(?)소 알지? ㅠ_ㅠ</span>
+  </li>
+
+  <li class="d-flex align-items-start mb-2">
+    <span class="badge rounded-pill bg-warning text-dark me-2">잘난척</span>
+    <span>정보보안기사 / 정보처리기사 / 리눅스 마스터 2급</span>
+  </li>
+
+  <li class="d-flex align-items-start mb-2">
+    <span class="badge rounded-pill bg-success me-2">또오 잘난척!</span>
+    <span>2024·2023 방송대 총장배 S/W 경진대회 장려상</span>
+  </li>
+
+  <li class="d-flex align-items-start">
+    <span class="badge rounded-pill bg-primary me-2">자선사업</span>
+    <span>구글 플레이스토어 게임 출시·운영 / AI 운영 / ‘잉글리시킹’ 앱 운영</span>
+  </li>
+</ul>
         </div>
         <div class="col-md-6 playstore-content text-start">
           <h3>놀개미 플레이 스토어</h3>
-          <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank"><img src="assets/images/playstore.jpg" alt="플레이 스토어" class="playstore-item img-fluid"></a>
+          <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank">
+            <img src="assets/playstore.jpg" alt="플레이 스토어" class="playstore-item img-fluid">
+          </a>
           <div class="content-snippet mt-2">
             <p>플레이 스토어에서 놀개미 앱과 게임을 확인하세요!</p>
             <a href="https://play.google.com/store/apps/developer?id=nolGaeMiProduction" target="_blank" class="btn btn-success">탐색</a>
@@ -66,38 +208,69 @@
       </div>
     </section>
 
-    <section id="social" class="mt-5">
-      <h2>소셜 미디어</h2>
-      <div class="row">
-        <div class="col-md-4 social-media-content text-start">
-          <div class="social-media-item">
-            <h3>유튜브</h3>
-            <a href="https://www.youtube.com/@nolgaemitv" target="_blank"><b>Hit Me!</b> <img src="assets/images/youtube-icon.jpg" alt="YouTube" style="height: 30px;"></a>
-            <iframe width="100%" height="215" src="https://www.youtube.com/embed/jaU_smjWgg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+<section id="social" class="mt-5">
+  <h2>소셜 미디어</h2>
+
+  <div class="row g-4">
+    <!-- YouTube -->
+    <div class="col-md-4">
+      <div class="social-media-content text-start h-100">
+        <div class="social-media-item">
+          <h3>유튜브</h3>
+          <a href="https://www.youtube.com/@nolgaemitv" target="_blank">
+            <b>Hit Me!</b>
+            <img src="assets/nolgaemi.png" alt="YouTube" style="height: 30px;">
+          </a>
+          <iframe width="100%" height="215"
+            src="https://youtu.be/jaU_smjWgg0?si=zYuS3nSwTiYJ4wi_"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
-        <div class="col-md-4 social-media-content text-start">
-          <div class="social-media-item">
-            <h3>구글 블로그 스팟</h3>
-            <a href="https://nolgaemi.blogspot.com/" target="_blank"><img src="assets/images/googleBlogSpot.jpg" alt="BlogSpot" style="height: 30px;"></a>
-            <div class="content-snippet mt-2">
-              <p>재미있고 유익한 콘텐츠를 읽기 위해 구글 블로그 스팟을 방문하세요!</p>
-              <a href="https://nolgaemi.blogspot.com/" target="_blank" class="btn btn-primary">더 읽기</a>
-            </div>
-          </div>
+      </div>
+    </div>
+
+    <!-- BlogSpot -->
+    <div class="col-md-4">
+      <div class="social-media-content text-start h-100">
+        <div class="social-media-item">
+          <h3>안보면 후회한닷!</h3>
+          <a href="https://lastenglishresources.blogspot.com/" target="_blank">
+            <img src="assets/nolgaemi.png" alt="BlogSpot" style="height: 30px;">
+          </a>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+              <p>새로 나온 "영단어 졸잼" 해보슈! 시간 가는줄 몰라유!</p>
+  	      <a href="https://lastenglishresources.blogspot.com/" target="_blank" class="btn btn-primary">잉글리쉬킹</a>
+              <a href="https://xxxsecurity.blogspot.com/" target="_blank" class="btn btn-primary">나는 정보보안기사닷!</a>
+  	      <a href="https://imperialpapa.github.io/crossword-puzzle/" target="_blank"
+                 class="btn btn-warning btn-lg fw-bold shadow">
+                  ✨ 영단어 졸잼!
+              </a>
+  	      <a href="https://kmartiallaw.github.io/" target="_blank" class="btn btn-primary">계엄령을 막아라</a>
+
+	  </div>
         </div>
-        <div class="col-md-4 social-media-content text-start">
-          <div class="social-media-item">
-            <h3>네이버 블로그</h3>
-            <a href="https://blog.naver.com/checrealname" target="_blank"><img src="assets/images/naverblog.jpg" alt="NaverBlog" style="height: 30px;"></a>
-            <div class="content-snippet mt-2">
-              <p>매우 유용한 파일과 데이터 다운로드를 위해 네이버 블로그를 탐험해보세요!</p>
-              <a href="https://blog.naver.com/checrealname" target="_blank" class="btn btn-primary">더 읽기</a>
-            </div>
+      </div>
+    </div>
+
+    <!-- Naver Blog -->
+    <div class="col-md-4">
+      <div class="social-media-content text-start h-100">
+        <div class="social-media-item">
+          <h3>네이버 블로그 구경 씸야!</h3>
+          <a href="https://blog.naver.com/checrealname" target="_blank">
+            <img src="assets/naverblog.jpg" alt="NaverBlog" style="height: 30px;">
+          </a>
+          <div class="content-snippet mt-2">
+            <p>매우 유용한 파일과 데이터 다운로드를 위해 네이버 블로그를 탐험해보세요!</p>
+            <a href="https://blog.naver.com/checrealname" target="_blank" class="btn btn-primary">더 읽기</a>
+	    <a href="https://blog.naver.com/checrealname/223677943239" target="_blank" class="btn btn-primary">인공지능 로또 다운받기</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="comments" class="mt-5">
       <h2>댓글</h2>
@@ -107,7 +280,6 @@
           this.page.url = window.location.href;
           this.page.identifier = window.location.pathname;
         };
-
         (function() {
           var d = document, s = d.createElement('script');
           s.src = 'https://cycloTechDream.disqus.com/embed.js';
@@ -125,69 +297,16 @@
 
   <!-- Bootstrap JS via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/scripts.js"></script>
+
+  <!-- (있다면) 기존 스크립트 유지 가능 -->
+  <!-- <script src="assets/js/scripts.js"></script> -->
+
+  <!-- NEW: Space + UI interactions -->
+  <script src="space.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const headerHeight = document.querySelector('header').offsetHeight;
-
-      document.querySelectorAll('a.nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-          
-          window.scrollTo({
-            top: targetElement.offsetTop - headerHeight,
-            behavior: 'smooth'
-          });
-        });
-      });
-
-      // Fetch and insert featured projects
-      fetch('all_projects.html')
-        .then(response => response.text())
-        .then(data => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(data, 'text/html');
-          const project1 = doc.querySelector('#project7');
-          const project2 = doc.querySelector('#project9');
-
-          const featuredProjects = document.getElementById('featured-projects');
-
-          if (project1) {
-            const project1Card = createProjectCard(project1);
-            featuredProjects.appendChild(project1Card);
-          }
-
-          if (project2) {
-            const project2Card = createProjectCard(project2);
-            featuredProjects.appendChild(project2Card);
-          }
-        })
-        .catch(error => console.error('Error fetching projects:', error));
-
-      function createProjectCard(projectRow) {
-        const title = projectRow.querySelector('td:nth-child(2)').textContent;
-        const source = projectRow.querySelector('td:nth-child(3)').innerHTML;
-        const description = projectRow.querySelector('td:nth-child(4)').textContent;
-        const link = projectRow.querySelector('td:nth-child(5)').innerHTML;
-
-        const card = document.createElement('div');
-        card.className = 'col-md-6';
-        card.innerHTML = `
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">${title}</h5>
-              <p class="card-text">${description}</p>
-              ${link}
-              <p class="card-text">${source}</p>
-            </div>
-          </div>
-        `;
-        return card;
-      }
-    });
+  	console.log("space.js loaded ✅");
   </script>
+
 </body>
 </html>
